@@ -1,8 +1,23 @@
 #include <iostream>
+#include <cmath>
+#ifdef USE_TRIGONOMETRY_DEGREE
 #include "trygonometria.h"
+#endif
+
+
 
 int main() 
 { 
-    std::cout<<degreemath::sin(90)<<std::endl;
+
+double result;
+
+#ifdef USE_TRIGONOMETRY_DEGREE
+    result = degreemath::cos(45); 
+#else
+    result = cos(M_PI/4.0); 
+#endif
+
+    std::cout<<result<<std::endl;
+
     return 0; 
 }
